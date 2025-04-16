@@ -757,10 +757,13 @@ class ScaleDepBias(Component):
     ----------
     xi_dm : np.ndarray
         The dark matter correlation function defined at some real-space scales, r.
+    nu : np.ndarray
+        Peak-height, `\delta_c^2/\sigma^2`.
     """
 
-    def __init__(self, xi_dm: np.ndarray, **model_parameters):
+    def __init__(self, xi_dm: np.ndarray, nu: np.ndarray, **model_parameters):
         self.xi_dm = xi_dm
+        self.nu = nu
         super().__init__(**model_parameters)
 
     def bias_scale(self) -> np.ndarray:

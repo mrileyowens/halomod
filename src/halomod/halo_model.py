@@ -408,7 +408,7 @@ class DMHaloModel(MassFunction):
             return None
         else:
             return self.sd_bias_model(
-                self.corr_halofit_mm_fnc(self._r_table), **self.sd_bias_params
+                self.corr_halofit_mm_fnc(self._r_table), self.nu, **self.sd_bias_params
             )
 
     @cached_quantity
